@@ -1,4 +1,4 @@
-const GRIDWIDTH = 900;
+const GRIDWIDTH = 600;
 
 const container = document.querySelector('#container');
 const resetButton = document.getElementById('resetButton');
@@ -39,7 +39,8 @@ function handleSquareHover(event) {
 
 function resetGrid() {
     let gridSize;
-
+    
+    // Ask User for Grid Size
     do {
         gridSize = parseInt(prompt('Enter the number of squares per side (1-100):'));
     } while (isNaN(gridSize) || gridSize < 1 || gridSize > 100);
@@ -49,16 +50,27 @@ function resetGrid() {
         container.firstChild.remove();
     }
 
+    createGrid(gridSize);
+
+}
+
+// create 9x9 default grid when page loads
+function createDefaultGrid() {
+    createGrid(9);
+  }
+
+// Create Grid of size gridSize x gridSize
+function createGrid(gridSize){
     container.style.width = `${GRIDWIDTH}px`;
 
     const borderSize = 2; // Default border=1 left & right within cell
-    const totalborderSize = gridSize * borderSize; // Total size occupied by gaps
+    const totalborderSize = gridSize * borderSize * 2; // Total size occupied by gaps
     const sideLength = Math.floor((GRIDWIDTH - totalborderSize) / gridSize); // Calculate the size of each grid cell
 
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
             const square = document.createElement('div');
-            square.classList.add('square');
+            square.classList.add('square','fancy-border');            
             square.style.width = `${sideLength}px`;
             square.style.height = `${sideLength}px`;
             container.appendChild(square);
@@ -70,6 +82,8 @@ function resetGrid() {
     }
 }
 
+
+createDefaultGrid()
 resetButton.addEventListener('click', resetGrid);
 
 

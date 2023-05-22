@@ -1,3 +1,15 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Grid & Description Box */
+#game_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #gridSection {
     display: flex;
     flex-direction: column;
@@ -5,9 +17,8 @@
     align-items: center;
 }
 
-#container {
-    display: flex;
-    flex-wrap: wrap;
+.text-box {
+    margin-right: 20px;
 }
 
 .square {
@@ -16,6 +27,7 @@
     border: 1px solid black;
 }
 
+/* Reset Button & Text */
 #resetButton {
     padding: 10px 20px;
     color: white;
@@ -24,15 +36,46 @@
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 10px;
-    
+
     transition: background-color 0.3s ease;
 }
 
 #resetButton:hover {
     background-color: #7ff0f8;
     color: #ffffff;
-    cursor: pointer; /* Change arrow -> hand when hovering */
+    cursor: pointer;
+    /* Change arrow -> hand when hovering */
 }
+
+h1 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(5, 91, 94);
+    font-size: 4rem;
+    /* rem = root element (font) size */
+    text-shadow: 5px 5px #eddcd2;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-family: 'Sacramento', cursive;
+    font-size: 1.5rem;
+    font-style: italic;
+    background: linear-gradient(to right, #2196f3, #f44336);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fancy-border {
+    border: 2px solid #ccc;
+    border-radius: 10%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
 
 /* .square.hovered {
     background-color: red;
