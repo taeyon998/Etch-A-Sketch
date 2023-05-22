@@ -8,6 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 100%;
+    max-width: 100%;
 }
 
 #gridSection {
@@ -18,7 +21,18 @@
 }
 
 .text-box {
-    margin-right: 20px;
+    font-family: 'Sacramento', cursive;
+    font-size: 1.5rem;
+    background: linear-gradient(to right, #2196f3, #f44336);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    flex-basis: 33.33%;
+    text-align: center;
+}
+
+.element {
+    flex-basis: 33.33%;
 }
 
 .square {
